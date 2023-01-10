@@ -3,6 +3,7 @@ package com.webproject.controllers;
 import com.webproject.domain.Post;
 import com.webproject.dto.request.PostCreateRequest;
 import com.webproject.dto.request.PostUpdateRequest;
+import com.webproject.dto.response.PostResponse;
 import com.webproject.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,8 @@ public class PostController {
 
 
     @GetMapping
-    public List<Post> getAllPosts(@RequestParam Optional<Long> userId){
+    public List<PostResponse> getAllPosts(@RequestParam Optional<Long> userId){
+
         return postService.getAllPost(userId);
     }
 
